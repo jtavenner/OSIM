@@ -12,7 +12,7 @@ namespace OSIM.UnitTests.OSIM.Core
         when_working_with_the_item_type_repository
     {
         private int _result;
-        private ItemTypeRepository _itemTypeRepository;
+        private IItemTypeRepository _itemTypeRepository;
         private ItemType _testItemType;
         private int _itemTypeId;
 
