@@ -1,6 +1,8 @@
 ﻿using System;
 using NBehave.Spec.NUnit;
 using NUnit.Framework;
+using Moq;
+using NHibernate;
 using OSIM.Core.Entities;
 using OSIM.Core.Persistence;
 
@@ -17,6 +19,18 @@ namespace OSIM.UnitTests.OSIM.Core
         private IItemTypeRepository _itemTypeRepository;
         private ItemType _testItemType;
         private int _itemTypeId;
+
+        protected override void Establish_context()
+        {
+            base.Establish_context();
+
+            var randomNumberGenerator = new Random();
+            _itemTypeId = randomNumberGenerator.Next(32000);
+
+            var sessionFactory = new Mock<ISessionFactory>();
+
+            _itemTypeRepository = new ItemTypeRepository(sessionFactory.Object);
+        }
 
         protected override void Because_of()
         {

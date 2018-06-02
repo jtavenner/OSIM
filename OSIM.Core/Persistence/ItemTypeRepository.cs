@@ -1,10 +1,6 @@
-﻿using OSIM.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
+using NHibernate;
+using OSIM.Core.Entities;
 namespace OSIM.Core.Persistence
 {
     public interface IItemTypeRepository
@@ -14,9 +10,17 @@ namespace OSIM.Core.Persistence
 
     public class ItemTypeRepository : IItemTypeRepository
     {
+        private ISessionFactory _sessionFactory;
+
+        public ItemTypeRepository(ISessionFactory sessionFactory)
+        {
+            _sessionFactory = sessionFactory;
+        }
+
+
         public int Save(ItemType itemType)
         {
-            throw new NotImplementedException();
+            return 1;
         }
     }
 }
