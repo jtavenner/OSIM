@@ -62,6 +62,13 @@ namespace OSIM.UnitTests.OSIM.Core
     {
         private Exception _result;
 
+        protected override void Establish_context()
+        {
+            base.Establish_context();
+
+            _session.Setup(s => s.Save(null)).Throws(new ArgumentNullException());
+        }
+
         protected override void Because_of()
         {
             try
