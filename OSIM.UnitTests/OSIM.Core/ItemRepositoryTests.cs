@@ -12,13 +12,13 @@ namespace OSIM.UnitTests.OSIM.Core
         when_working_with_the_item_type_repository
     {
         private int _result;
-        private ItemTypeRepository _itemRepository;
+        private ItemTypeRepository _itemTypeRepository;
         private ItemType _testItemType;
         private int _itemTypeId;
 
         protected override void Because_of()
         {
-            _result = _itemRepository.Save(_testItemType);
+            _result = _itemTypeRepository.Save(_testItemType);
         }
 
 
