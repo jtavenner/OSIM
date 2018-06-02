@@ -72,5 +72,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OSIM.Core\OSIM.Core.csproj">
+      <Project>{EE1C6C92-7631-4990-9A75-510ECDD653CB}</Project>
+      <Name>OSIM.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

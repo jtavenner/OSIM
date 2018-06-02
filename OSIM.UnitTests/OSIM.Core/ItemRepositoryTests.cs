@@ -1,6 +1,8 @@
 ﻿using System;
 using NBehave.Spec.NUnit;
 using NUnit.Framework;
+using OSIM.Core.Entities;
+using OSIM.Core.Persistence;
 
 namespace OSIM.UnitTests.OSIM.Core
 {
