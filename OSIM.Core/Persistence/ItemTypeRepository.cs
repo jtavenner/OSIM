@@ -20,7 +20,14 @@ namespace OSIM.Core.Persistence
 
         public int Save(ItemType itemType)
         {
-            return 1;
+            int id;
+
+            using (var session = _sessionFactory.OpenSession())
+            {
+                id = (int)session.Save(itemType);
+                session.Flush();
+            }
+            return id;
         }
     }
 }

@@ -28,6 +28,11 @@ namespace OSIM.UnitTests.OSIM.Core
             _itemTypeId = randomNumberGenerator.Next(32000);
 
             var sessionFactory = new Mock<ISessionFactory>();
+            var session = new Mock<ISession>();
+
+            session.Setup(s => s.Save(_testItemType)).Returns(_itemTypeId);
+
+            sessionFactory.Setup(sf => sf.OpenSession()).Returns(session.Object);
 
             _itemTypeRepository = new ItemTypeRepository(sessionFactory.Object);
         }
