@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Entities\ItemType.cs" />
     <Compile Include="Persistence\ItemTypeRepository.cs" />
+    <Compile Include="Persistence\Mappings\ItemTypeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
